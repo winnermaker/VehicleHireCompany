@@ -10,26 +10,23 @@ using System.Windows.Forms;
 
 namespace VehicleHireCompany
 {
-    public partial class FrmActivityLog : Form
+    public partial class FrmMain : Form
     {
-        public FrmActivityLog()
+        private FrmVehicle _VehicleForm;
+        public FrmMain()
         {
             InitializeComponent();
         }
 
-        private void btnOK_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            _VehicleForm = new FrmVehicle();
+            _VehicleForm.Show();
+        }
 
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Close();
         }
 
         private void btnEdit_Click(object sender, EventArgs e)

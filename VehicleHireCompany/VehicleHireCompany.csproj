@@ -46,11 +46,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FmMain.cs">
+    <Compile Include="ClsActivity.cs" />
+    <Compile Include="ClsCompany.cs" />
+    <Compile Include="ClsHire.cs" />
+    <Compile Include="ClsRelocate.cs" />
+    <Compile Include="ClsService.cs" />
+    <Compile Include="ClsVehicle.cs" />
+    <Compile Include="FrmHire.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FmMain.Designer.cs">
-      <DependentUpon>FmMain.cs</DependentUpon>
+    <Compile Include="FrmHire.Designer.cs">
+      <DependentUpon>FrmHire.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMain.Designer.cs">
+      <DependentUpon>FrmMain.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmActivity.cs">
       <SubType>Form</SubType>
@@ -63,12 +75,6 @@
     </Compile>
     <Compile Include="FrmActivityLog.Designer.cs">
       <DependentUpon>FrmActivityLog.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmHire.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmHire.Designer.cs">
-      <DependentUpon>FrmHire.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmRelocate.cs">
       <SubType>Form</SubType>
@@ -90,6 +96,27 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmHire.resx">
+      <DependentUpon>FrmHire.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMain.resx">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmActivity.resx">
+      <DependentUpon>FrmActivity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmActivityLog.resx">
+      <DependentUpon>FrmActivityLog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRelocate.resx">
+      <DependentUpon>FrmRelocate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmService.resx">
+      <DependentUpon>FrmService.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmVehicle.resx">
+      <DependentUpon>FrmVehicle.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

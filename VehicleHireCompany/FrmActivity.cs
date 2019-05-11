@@ -16,5 +16,16 @@ namespace VehicleHireCompany
         {
             InitializeComponent();
         }
+
+        private void btnOK_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            Close();
+            DialogResult = DialogResult.Cancel;
+        }
     }
 }
