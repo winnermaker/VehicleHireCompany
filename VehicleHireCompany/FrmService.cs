@@ -14,15 +14,19 @@ namespace VehicleHireCompany
         {
             InitializeComponent();
         }
-
-        private void textBox3_TextChanged(object sender, EventArgs e)
+        protected override void UpdateDisplay()
         {
+            base.UpdateDisplay();
+            ClsService lcActivity = (ClsService)_Activity;
+            txtWorkshop.Text = lcActivity.Workshop;
 
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        protected override void PushData()
         {
-
+            base.PushData();
+            ClsService lcActivity = (ClsService)_Activity;
+            lcActivity.Workshop = txtWorkshop.Text;
         }
     }
 }

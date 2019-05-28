@@ -12,25 +12,65 @@ namespace VehicleHireCompany
 {
     public partial class FrmVehicle : Form
     {
-        private FrmActivityLog _ActivityForm = new FrmActivityLog();
+        private FrmActivityLog _ActivityLogForm = new FrmActivityLog();
+        protected ClsVehicle _Vehicle = new ClsVehicle();
+
         public FrmVehicle()
         {
             InitializeComponent();
+            UpdateDisplay();
         }
 
         private void btnOK_Click(object sender, EventArgs e)
         {
-
+            if (txtRegNumber.Enabled && ClsCompany.VehicleList.ContainsKey(txtRegNumber.Text))
+                MessageBox.Show("Car with that RegistrationNumber already exists", "Duplicate RegistrationNumber");
+            else
+            {
+                PushData();
+                ClsVehicle lcVehicle = _Vehicle;
+                if (lcVehicle != null && txtRegNumber.Enabled)
+                {
+                    ClsCompany.VehicleList.Add(lcVehicle.RegistrationNumber, lcVehicle);                    
+                }
+                DialogResult = DialogResult.OK;                
+            }
         }
 
-        private void btnCamcel_Click(object sender, EventArgs e)
+        private void UpdateDisplay()
+        {
+            txtRegNumber.Text = _Vehicle.RegistrationNumber;
+            txtModel.Text = _Vehicle.Model;
+            txtmake.Text = _Vehicle.Make;
+            txtDailyCharge.Text = _Vehicle.DailyHireCharge.ToString();
+            txtRegNumber.Enabled = String.IsNullOrEmpty(_Vehicle.RegistrationNumber);
+            dtpYear.Value = Convert.ToDateTime( ("01/01/"+_Vehicle.Year));
+        }
+
+        private void PushData()
+        {
+            _Vehicle.RegistrationNumber = txtRegNumber.Text;
+            _Vehicle.Model = txtModel.Text;
+            _Vehicle.Make = txtmake.Text;
+            _Vehicle.Year = dtpYear.Value.Year;
+            _Vehicle.DailyHireCharge = Convert.ToDecimal(txtDailyCharge.Text);
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
         {
             Close();
         }
 
         private void btnActivity_Click(object sender, EventArgs e)
         {
-            _ActivityForm.Show();
+            _ActivityLogForm.ShowDialog(_Vehicle);
+        }
+        
+        public DialogResult ShowDialog(ClsVehicle prVehicle)
+        {
+            _Vehicle = prVehicle;
+            UpdateDisplay();
+            return ShowDialog();
         }
     }
 }

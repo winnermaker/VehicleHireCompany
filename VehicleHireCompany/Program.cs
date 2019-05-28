@@ -16,7 +16,7 @@ namespace VehicleHireCompany
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmRelocate());
+            Application.Run(new FrmMain());
         }
     }
 }

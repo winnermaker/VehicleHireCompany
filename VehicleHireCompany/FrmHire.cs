@@ -14,5 +14,20 @@ namespace VehicleHireCompany
         {
             InitializeComponent();
         }
+        protected override void UpdateDisplay()
+        {
+            base.UpdateDisplay();
+            ClsHire lcActivity = (ClsHire)_Activity;
+            txtCustomer.Text = lcActivity.CustName;
+            dtpEndDate.Value = lcActivity.EndDate;
+        }
+
+        protected override void PushData()
+        {
+            base.PushData();
+            ClsHire lcActivity = (ClsHire)_Activity;
+            lcActivity.EndDate = dtpEndDate.Value;
+            lcActivity.CustName = txtCustomer.Text;            
+        }
     }
 }

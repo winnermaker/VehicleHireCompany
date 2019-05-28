@@ -29,40 +29,59 @@
         private void InitializeComponent()
         {
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtWorkshop = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
+            // 
+            // label1
+            // 
+            this.label1.Size = new System.Drawing.Size(79, 17);
+            this.label1.Text = "Description";
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Location = new System.Drawing.Point(236, 90);
+            // 
+            // btnOK
+            // 
+            this.btnOK.Location = new System.Drawing.Point(236, 55);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(12, 206);
+            this.label2.Location = new System.Drawing.Point(11, 90);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(136, 31);
+            this.label2.Size = new System.Drawing.Size(72, 17);
             this.label2.TabIndex = 9;
             this.label2.Text = "Workshop";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
-            // textBox3
+            // txtWorkshop
             // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(183, 206);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(257, 38);
-            this.textBox3.TabIndex = 10;
-            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            this.txtWorkshop.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtWorkshop.Location = new System.Drawing.Point(92, 90);
+            this.txtWorkshop.Margin = new System.Windows.Forms.Padding(2);
+            this.txtWorkshop.Name = "txtWorkshop";
+            this.txtWorkshop.Size = new System.Drawing.Size(130, 23);
+            this.txtWorkshop.TabIndex = 10;
             // 
             // FrmService
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
-            this.ClientSize = new System.Drawing.Size(613, 392);
-            this.Controls.Add(this.textBox3);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.ClientSize = new System.Drawing.Size(306, 125);
+            this.Controls.Add(this.txtWorkshop);
             this.Controls.Add(this.label2);
-            this.Margin = new System.Windows.Forms.Padding(8);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmService";
             this.Text = "Activity - Service";
+            this.Controls.SetChildIndex(this.txtValue, 0);
+            this.Controls.SetChildIndex(this.label1, 0);
+            this.Controls.SetChildIndex(this.label3, 0);
+            this.Controls.SetChildIndex(this.label4, 0);
+            this.Controls.SetChildIndex(this.btnCancel, 0);
+            this.Controls.SetChildIndex(this.btnOK, 0);
             this.Controls.SetChildIndex(this.label2, 0);
-            this.Controls.SetChildIndex(this.textBox3, 0);
+            this.Controls.SetChildIndex(this.txtWorkshop, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -71,6 +90,6 @@
         #endregion
 
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtWorkshop;
     }
 }

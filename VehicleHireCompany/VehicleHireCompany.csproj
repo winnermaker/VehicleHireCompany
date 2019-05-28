@@ -48,7 +48,9 @@
   <ItemGroup>
     <Compile Include="ClsActivity.cs" />
     <Compile Include="ClsCompany.cs" />
+    <Compile Include="ClsDateComparer.cs" />
     <Compile Include="ClsHire.cs" />
+    <Compile Include="ClsNameComparer.cs" />
     <Compile Include="ClsRelocate.cs" />
     <Compile Include="ClsService.cs" />
     <Compile Include="ClsVehicle.cs" />
