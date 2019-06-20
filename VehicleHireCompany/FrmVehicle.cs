@@ -14,6 +14,7 @@ namespace VehicleHireCompany
     {
         private FrmActivityLog _ActivityLogForm = new FrmActivityLog();
         protected ClsVehicle _Vehicle = new ClsVehicle();
+        private decimal lcHireCharge;
 
         public FrmVehicle()
         {
@@ -66,11 +67,13 @@ namespace VehicleHireCompany
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
+            _Vehicle.DailyHireCharge = lcHireCharge;
             Close();
         }
 
         private void btnActivity_Click(object sender, EventArgs e)
         {
+            lcHireCharge = _Vehicle.DailyHireCharge;
             PushData();
             _ActivityLogForm.ShowDialog(_Vehicle);
         }
