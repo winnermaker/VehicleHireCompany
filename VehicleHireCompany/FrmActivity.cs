@@ -17,8 +17,8 @@ namespace VehicleHireCompany
         {
             InitializeComponent();
         }
-
-        private void btnOK_Click(object sender, EventArgs e)
+        
+        protected virtual void btnOK_Click(object sender, EventArgs e)
         {
             PushData();
             DialogResult = DialogResult.OK;
@@ -30,32 +30,26 @@ namespace VehicleHireCompany
             DialogResult = DialogResult.Cancel;
         }
 
+
         public Boolean ShowDialog(ClsActivity prActivity)
         {            
             _Activity = prActivity;
             UpdateDisplay();
             DialogResult result = ShowDialog();
-            if (result == DialogResult.OK)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            return result == DialogResult.OK;
         }
 
         protected virtual void UpdateDisplay()
         {
             txtName.Text = _Activity.Name;
-            txtValue.Text = _Activity.Value.ToString();
+            nudValue.Value = _Activity.Value;
             dtpActivityDate.Value = _Activity.Date;
         
         }
         protected virtual void PushData()
         {
             _Activity.Name = txtName.Text;
-            _Activity.Value = Convert.ToDecimal(txtValue.Text);
+            _Activity.Value = nudValue.Value;
             _Activity.Date = dtpActivityDate.Value;
 
         }

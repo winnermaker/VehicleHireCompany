@@ -28,5 +28,19 @@ namespace VehicleHireCompany
             ClsService lcActivity = (ClsService)_Activity;
             lcActivity.Workshop = txtWorkshop.Text;
         }
+
+        protected override void btnOK_Click(object sender, EventArgs e)
+        {
+            ClsService lcActivity = (ClsService)_Activity;
+            PushData();
+            if (txtName.Text != "" && txtWorkshop.Text != "")
+            {
+                base.btnOK_Click(sender, e);
+            }
+            else
+            {
+                MessageBox.Show("A Least one Field is empty. Please insert missing Data", "Field Empty");
+            }
+        }
     }
 }

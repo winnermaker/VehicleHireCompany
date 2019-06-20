@@ -30,51 +30,60 @@
         {
             this.label2 = new System.Windows.Forms.Label();
             this.txtWorkshop = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.nudValue)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
-            this.label1.Size = new System.Drawing.Size(79, 17);
+            this.label1.Margin = new System.Windows.Forms.Padding(12, 0, 12, 0);
+            this.label1.Size = new System.Drawing.Size(151, 31);
             this.label1.Text = "Description";
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(236, 90);
+            this.btnCancel.Location = new System.Drawing.Point(472, 173);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
             // 
             // btnOK
             // 
-            this.btnOK.Location = new System.Drawing.Point(236, 55);
+            this.btnOK.Location = new System.Drawing.Point(472, 106);
+            this.btnOK.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            // 
+            // nudValue
+            // 
+            this.nudValue.Margin = new System.Windows.Forms.Padding(12, 12, 12, 12);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(11, 90);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(22, 173);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(72, 17);
+            this.label2.Size = new System.Drawing.Size(136, 31);
             this.label2.TabIndex = 9;
             this.label2.Text = "Workshop";
             // 
             // txtWorkshop
             // 
             this.txtWorkshop.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtWorkshop.Location = new System.Drawing.Point(92, 90);
-            this.txtWorkshop.Margin = new System.Windows.Forms.Padding(2);
+            this.txtWorkshop.Location = new System.Drawing.Point(184, 173);
+            this.txtWorkshop.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtWorkshop.Name = "txtWorkshop";
-            this.txtWorkshop.Size = new System.Drawing.Size(130, 23);
+            this.txtWorkshop.Size = new System.Drawing.Size(256, 38);
             this.txtWorkshop.TabIndex = 10;
             // 
             // FrmService
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.ClientSize = new System.Drawing.Size(306, 125);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.ClientSize = new System.Drawing.Size(612, 240);
             this.Controls.Add(this.txtWorkshop);
             this.Controls.Add(this.label2);
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
             this.Name = "FrmService";
             this.Text = "Activity - Service";
-            this.Controls.SetChildIndex(this.txtValue, 0);
+            this.Controls.SetChildIndex(this.dtpActivityDate, 0);
+            this.Controls.SetChildIndex(this.nudValue, 0);
             this.Controls.SetChildIndex(this.label1, 0);
             this.Controls.SetChildIndex(this.label3, 0);
             this.Controls.SetChildIndex(this.label4, 0);
@@ -82,6 +91,7 @@
             this.Controls.SetChildIndex(this.btnOK, 0);
             this.Controls.SetChildIndex(this.label2, 0);
             this.Controls.SetChildIndex(this.txtWorkshop, 0);
+            ((System.ComponentModel.ISupportInitialize)(this.nudValue)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

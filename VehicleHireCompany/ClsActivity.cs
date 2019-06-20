@@ -34,9 +34,11 @@ namespace VehicleHireCompany {
 
         public abstract string TypeOfActivity();
 
+        public abstract decimal CalculateValue(decimal prValue);
+
         public override string ToString()
         {
-            return String.Format("{0,-20}\t\t|  {1,-20}\t|  {2,-20}\t|  {3:C}", _Name, TypeOfActivity(), _Date.ToShortDateString(), _Value);
+            return String.Format("{0,-20}\t\t|  {1,-20}\t|  {2,-20}\t", _Name, TypeOfActivity(), _Date.ToShortDateString());
         }
 	}
 }

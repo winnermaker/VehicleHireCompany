@@ -28,11 +28,19 @@ namespace VehicleHireCompany
             else
             {
                 PushData();
-                ClsVehicle lcVehicle = _Vehicle;
-                if (lcVehicle != null && txtRegNumber.Enabled)
+                if (txtRegNumber.Text != "" && txtModel.Text != "" && txtmake.Text != "")
                 {
-                    ClsCompany.VehicleList.Add(lcVehicle.RegistrationNumber, lcVehicle);                    
+                    ClsVehicle lcVehicle = _Vehicle;
+                    if (lcVehicle != null && txtRegNumber.Enabled)
+                    {
+                        ClsCompany.VehicleList.Add(lcVehicle.RegistrationNumber, lcVehicle);
+                    }
                 }
+                else
+                {
+                    MessageBox.Show("A Least one Field is empty. Please insert missing Data", "Field Empty");
+                }
+                
                 DialogResult = DialogResult.OK;                
             }
         }
@@ -42,7 +50,7 @@ namespace VehicleHireCompany
             txtRegNumber.Text = _Vehicle.RegistrationNumber;
             txtModel.Text = _Vehicle.Model;
             txtmake.Text = _Vehicle.Make;
-            txtDailyCharge.Text = _Vehicle.DailyHireCharge.ToString();
+            nudHireCharge.Value = _Vehicle.DailyHireCharge;
             txtRegNumber.Enabled = String.IsNullOrEmpty(_Vehicle.RegistrationNumber);
             dtpYear.Value = Convert.ToDateTime( ("01/01/"+_Vehicle.Year));
         }
@@ -53,7 +61,7 @@ namespace VehicleHireCompany
             _Vehicle.Model = txtModel.Text;
             _Vehicle.Make = txtmake.Text;
             _Vehicle.Year = dtpYear.Value.Year;
-            _Vehicle.DailyHireCharge = Convert.ToDecimal(txtDailyCharge.Text);
+            _Vehicle.DailyHireCharge = nudHireCharge.Value;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -63,6 +71,7 @@ namespace VehicleHireCompany
 
         private void btnActivity_Click(object sender, EventArgs e)
         {
+            PushData();
             _ActivityLogForm.ShowDialog(_Vehicle);
         }
         

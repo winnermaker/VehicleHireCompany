@@ -21,6 +21,16 @@ namespace VehicleHireCompany {
         {
             return _Form.ShowDialog(this);
         }
+
+        public override decimal CalculateValue(decimal prValue)
+        {
+            return prValue;
+        }
+
+        public override string ToString()
+        {
+            return base.ToString() + String.Format("|  -{0:C}", Value);
+        }
     }
 
 }

@@ -12,21 +12,25 @@ namespace VehicleHireCompany
 {
     public partial class FrmActivityLog : Form
     {
-        private ClsVehicle _Vehicle;
+        private ClsVehicle _Vehicle = new ClsVehicle();
+        private IComparer<ClsActivity>[] _Comparer ={ new clsNameComparer(), new clsDateComparer() };
+        private int _SortOrder; //sortOrder = 0 => by name; sortOrder = 1 => by date 
         public FrmActivityLog()
         {
             InitializeComponent();
             cbActivityChoice.DataSource = ClsActivity.ActivityType;
             cbActivityChoice.SelectedIndex = 0;
+            rbtnName.Checked = true;
+            _SortOrder = 0;
         }
         private void UpdateDisplay()
         {
-            lstActivities.DataSource = null;
-            lstActivities.DataSource = _Vehicle.ActivityList;
-            DisplayHireCost();
+            List<ClsActivity> lcActivityList = _Vehicle.ActivityList;
+            lcActivityList.Sort(_Comparer[_SortOrder]);
+            lstActivities.DataSource = null; //force refresh
+            lstActivities.DataSource = lcActivityList;            
             lblValue.Text = string.Format("{0:C} ", _Vehicle.TotalValue());
             lblRegNumber.Text = _Vehicle.RegistrationNumber;
-            _Vehicle.SortList(rbtnName.Checked);   
         }
 
         private void DisplayHireCost()
@@ -36,11 +40,23 @@ namespace VehicleHireCompany
                 int count = 0;
                 foreach (ClsActivity lcActivity in _Vehicle.ActivityList)
                 {
-                    if (lcActivity.TypeOfActivity() == "Hire")
+                    switch (lcActivity.TypeOfActivity())
                     {
-                        ClsHire hire = (ClsHire)_Vehicle.ActivityList[count];
-                        hire.Value = hire.CalculateCost(hire.Date.Date, hire.EndDate.Date, _Vehicle.DailyHireCharge);
+                        case "Hire":
+                            ClsHire hire = (ClsHire)_Vehicle.ActivityList[count];
+                            hire.Value = hire.CalculateValue(_Vehicle.DailyHireCharge);
+                            
+                            break;
+                        case "Relocate":
+                            ClsRelocate relocate = (ClsRelocate )_Vehicle.ActivityList[count];
+                            relocate.Value = relocate.CalculateValue(lcActivity.Value);
+                            break;
+                        default:
+                            ClsService service = (ClsService)_Vehicle.ActivityList[count];
+                            service.Value = service.CalculateValue(lcActivity.Value);
+                            break;
                     }
+                       
                     count++;
                 }
             }
@@ -52,6 +68,7 @@ namespace VehicleHireCompany
             if (lcActivity != null && lcActivity.ViewEdit())
             {
                 _Vehicle.ActivityList.Add(lcActivity);
+                DisplayHireCost();
                 UpdateDisplay();
             }            
         }
@@ -97,15 +114,62 @@ namespace VehicleHireCompany
             UpdateDisplay();
             return ShowDialog();
         }
-        
-        private void rbtnName_CheckedChanged(object sender, EventArgs e)
+
+
+        private void rbtnDate_CheckedChanged(object sender, EventArgs e)
         {
+            //sortOrder = 1 => by name; sortOrder = 0 => by date 
+            if (rbtnDate.Checked)
+            {
+                _SortOrder = 1;
+            }
+            else
+            {
+                _SortOrder = 0;;
+            }
             UpdateDisplay();
         }
 
         private void FrmActivityLog_Load(object sender, EventArgs e)
         {
+            DisplayHireCost();
             UpdateDisplay();
+        }
+
+        class clsDateComparer : IComparer<ClsActivity>
+        {
+            public int Compare(ClsActivity prActivityX, ClsActivity prActivityY)
+            { 
+                int lcResult = prActivityX.Date.Date.CompareTo(prActivityY.Date.Date);
+                if(lcResult != 0)
+                {
+                    return lcResult;
+                }
+                else
+                {
+                    return prActivityX.Name.CompareTo(prActivityY.Name);
+                }
+            }
+        }
+
+        class clsNameComparer : IComparer<ClsActivity>
+        {
+            public int Compare(ClsActivity prActivityX, ClsActivity prActivityY)
+            {/*Assign lcResult  prStudentX.Name.CompareTo(prStudentY.Name)
+                If lcResult<> 0
+                Return lcResult
+                Else
+                Return prStudentX.DOB.Date.CompareTo(prStudentY.DOB.Date)*/
+                int lcResult = prActivityX.Name.CompareTo(prActivityY.Name);
+                if (lcResult != 0)
+                {
+                    return lcResult;
+                }
+                else
+                {
+                    return prActivityX.Date.Date.CompareTo(prActivityY.Date.Date);
+                }
+            }
         }
     }
 }

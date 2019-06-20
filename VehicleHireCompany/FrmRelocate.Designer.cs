@@ -29,54 +29,70 @@
         private void InitializeComponent()
         {
             this.label2 = new System.Windows.Forms.Label();
-            this.txtKm = new System.Windows.Forms.TextBox();
+            this.nudKM = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.nudValue)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudKM)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(231, 90);
+            this.btnCancel.Location = new System.Drawing.Point(462, 173);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
             // 
             // btnOK
             // 
-            this.btnOK.Location = new System.Drawing.Point(231, 55);
+            this.btnOK.Location = new System.Drawing.Point(462, 106);
+            this.btnOK.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            // 
+            // nudValue
+            // 
+            this.nudValue.Margin = new System.Windows.Forms.Padding(12, 12, 12, 12);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(12, 90);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(22, 179);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(73, 17);
+            this.label2.Size = new System.Drawing.Size(140, 31);
             this.label2.TabIndex = 9;
             this.label2.Text = "Driven KM";
             // 
-            // txtKm
+            // nudKM
             // 
-            this.txtKm.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtKm.Location = new System.Drawing.Point(92, 90);
-            this.txtKm.Margin = new System.Windows.Forms.Padding(2);
-            this.txtKm.Name = "txtKm";
-            this.txtKm.Size = new System.Drawing.Size(130, 23);
-            this.txtKm.TabIndex = 10;
+            this.nudKM.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nudKM.Location = new System.Drawing.Point(184, 173);
+            this.nudKM.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.nudKM.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.nudKM.Name = "nudKM";
+            this.nudKM.Size = new System.Drawing.Size(256, 37);
+            this.nudKM.TabIndex = 14;
             // 
             // FrmRelocate
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.ClientSize = new System.Drawing.Size(306, 129);
-            this.Controls.Add(this.txtKm);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.ClientSize = new System.Drawing.Size(612, 248);
+            this.Controls.Add(this.nudKM);
             this.Controls.Add(this.label2);
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
             this.Name = "FrmRelocate";
             this.Text = "Activity - Relocate";
-            this.Controls.SetChildIndex(this.txtValue, 0);
+            this.Controls.SetChildIndex(this.dtpActivityDate, 0);
+            this.Controls.SetChildIndex(this.nudValue, 0);
             this.Controls.SetChildIndex(this.btnCancel, 0);
             this.Controls.SetChildIndex(this.btnOK, 0);
             this.Controls.SetChildIndex(this.label1, 0);
             this.Controls.SetChildIndex(this.label3, 0);
             this.Controls.SetChildIndex(this.label4, 0);
             this.Controls.SetChildIndex(this.label2, 0);
-            this.Controls.SetChildIndex(this.txtKm, 0);
+            this.Controls.SetChildIndex(this.nudKM, 0);
+            ((System.ComponentModel.ISupportInitialize)(this.nudValue)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudKM)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -85,6 +101,6 @@
         #endregion
 
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtKm;
+        private System.Windows.Forms.NumericUpDown nudKM;
     }
 }

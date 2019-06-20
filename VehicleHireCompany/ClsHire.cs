@@ -15,11 +15,6 @@ namespace VehicleHireCompany {
         public string CustName { get => _CustName; set => _CustName = value; }       
         public DateTime EndDate { get => _EndDate; set => _EndDate = value; }
 
-        public decimal CalculateCost(DateTime prStart, DateTime prEnd, decimal prDailyCharge) {
-            decimal days = Convert.ToDecimal((prEnd - prStart).TotalDays);
-            return days * prDailyCharge;
-		}
-
         public override Boolean ViewEdit()
         {            
             return _Form.ShowDialog(this);
@@ -30,8 +25,23 @@ namespace VehicleHireCompany {
             return "Hire";
         }
 
+        public override decimal CalculateValue(decimal prHireCharge)
+        {
+            if (_EndDate.CompareTo(Date) >= 0) //<0:instance earlier than value. 0:instance same as value. 0<:instance later than value.
+            {
+                decimal days = Convert.ToDecimal((_EndDate - Date).TotalDays + 1);
+                return days * prHireCharge;
+            }
+            else
+            {
+                return 0;
+            }
+        }
 
-
+        public override string ToString()
+        {
+            return base.ToString() + String.Format("|   {0:C}", Value);
+        }
     }
 
 }

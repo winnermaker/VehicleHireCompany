@@ -39,7 +39,8 @@ namespace VehicleHireCompany
 
         private void UpdateDisplay()
         {
-            lstVehicle.DataSource = ClsCompany.VehicleList.Keys.ToList();     
+            lstVehicle.DataSource = ClsCompany.VehicleList.Values.ToList();
+            lstVehicle.DisplayMember = "RegistrationNumber";
             lblValue.Text = string.Format("{0:C} ", ClsCompany.TotalValue());
         }    
         
@@ -47,9 +48,12 @@ namespace VehicleHireCompany
         {
             if (ClsCompany.VehicleList.Count != 0)
             {
-                String lcRegNumber = lstVehicle.SelectedItem.ToString();
-                ClsVehicle lcVehicle = ClsCompany.VehicleList[lcRegNumber];
+                ClsVehicle lcVehicle = (ClsVehicle)lstVehicle.SelectedItem;
                 lblQuickView.Text = String.Format("Make:   {0}\nModel:   {1}\nYear:   {2}\nDaily Hire Charge: {3:c}", lcVehicle.Make, lcVehicle.Model,lcVehicle.Year, lcVehicle.DailyHireCharge);
+            }
+            else
+            {
+                lblQuickView.Text = "";
             }
         }
 
@@ -61,15 +65,13 @@ namespace VehicleHireCompany
         private void btnEdit_Click(object sender, EventArgs e)
         {
             EditVehicle();
-
         }
 
         private void EditVehicle()
         {
             if (ClsCompany.VehicleList.Count != 0)
             {
-                String lcRegNumber = lstVehicle.SelectedItem.ToString();
-                ClsVehicle lcVehicle = ClsCompany.VehicleList[lcRegNumber];
+                ClsVehicle lcVehicle = (ClsVehicle)lstVehicle.SelectedItem;
                 if (lcVehicle != null)
                 {
                     _VehicleForm.ShowDialog(lcVehicle);
@@ -84,32 +86,19 @@ namespace VehicleHireCompany
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            String lcRegNumber = lstVehicle.SelectedItem.ToString();
-            ClsVehicle lcVehicle = ClsCompany.VehicleList[lcRegNumber];
+            ClsVehicle lcVehicle = (ClsVehicle)lstVehicle.SelectedItem;
             if (lcVehicle != null && DialogResult.Yes == MessageBox.Show("Are you sure you want to delete the selected Vehicle?", "Delete Vehicle", MessageBoxButtons.YesNo))
             {
                 ClsCompany.VehicleList.Remove(lcVehicle.RegistrationNumber);
                 UpdateDisplay();
-                if (ClsCompany.VehicleList.Count == 0)
-                {
-                    lblQuickView.Text = "";
-                }
-
+                QuickView();
             }
             
         }
 
         private void lstVehicle_SelectedIndexChanged(object sender, EventArgs e)
         {
-            try
-            {
-                QuickView();                
-            }
-            catch (Exception)
-            {
-
-            }
-            
+            QuickView();
         }
 
         private void lstVehicle_DoubleClick(object sender, EventArgs e)

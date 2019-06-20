@@ -24,27 +24,34 @@ namespace VehicleHireCompany {
         public decimal TotalValue()
         {
             decimal lcTotal = 0;
-            if (_ActivityList != null)
+            if (ActivityList != null)
             {
-                foreach (ClsActivity lcActivity in _ActivityList)
+                int count = 0;
+                foreach (ClsActivity lcActivity in ActivityList)
                 {
-                    lcTotal += lcActivity.Value;
+                    switch (lcActivity.TypeOfActivity())
+                    {
+                        case "Hire":
+                            ClsHire hire = (ClsHire)ActivityList[count];
+                            hire.Value = hire.CalculateValue(DailyHireCharge);
+                            lcTotal += lcActivity.Value;
+                            break;
+                        case "Relocate":
+                            ClsRelocate relocate = (ClsRelocate)ActivityList[count];
+                            relocate.Value = relocate.CalculateValue(lcActivity.Value);
+                            lcTotal -= lcActivity.Value;
+                            break;
+                        default:
+                            ClsService service = (ClsService)ActivityList[count];
+                            service.Value = service.CalculateValue(lcActivity.Value);
+                            lcTotal -= lcActivity.Value;
+                            break;
+                    }
+
+                    count++;
                 }
             }
             return lcTotal;
-        }
-
-        public void SortList(bool SortOrder)
-        {
-            if (!SortOrder)
-            {
-                ActivityList.Sort(ClsNameComparer.Instance);
-            }
-            else
-            {
-                ActivityList.Sort(ClsDateComparer.Instance);
-            }
-
         }
 
     }

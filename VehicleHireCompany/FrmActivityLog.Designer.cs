@@ -53,8 +53,8 @@
             // 
             this.lblLog.AutoSize = true;
             this.lblLog.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLog.Location = new System.Drawing.Point(6, 14);
-            this.lblLog.Margin = new System.Windows.Forms.Padding(12, 0, 12, 0);
+            this.lblLog.Location = new System.Drawing.Point(10, 15);
+            this.lblLog.Margin = new System.Windows.Forms.Padding(48, 0, 48, 0);
             this.lblLog.Name = "lblLog";
             this.lblLog.Size = new System.Drawing.Size(53, 17);
             this.lblLog.TabIndex = 1;
@@ -63,10 +63,10 @@
             // btnAdd
             // 
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Location = new System.Drawing.Point(9, 306);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(12);
+            this.btnAdd.Location = new System.Drawing.Point(13, 366);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(48, 44, 48, 44);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(101, 32);
+            this.btnAdd.Size = new System.Drawing.Size(92, 34);
             this.btnAdd.TabIndex = 2;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseCompatibleTextRendering = true;
@@ -76,10 +76,10 @@
             // btnClose
             // 
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.Location = new System.Drawing.Point(450, 389);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(12);
+            this.btnClose.Location = new System.Drawing.Point(520, 451);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(48, 44, 48, 44);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(101, 32);
+            this.btnClose.Size = new System.Drawing.Size(88, 34);
             this.btnClose.TabIndex = 3;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
@@ -88,10 +88,10 @@
             // btnDelete
             // 
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Location = new System.Drawing.Point(9, 389);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(12);
+            this.btnDelete.Location = new System.Drawing.Point(13, 411);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(48, 44, 48, 44);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(101, 32);
+            this.btnDelete.Size = new System.Drawing.Size(92, 34);
             this.btnDelete.TabIndex = 4;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
@@ -100,10 +100,10 @@
             // btnEdit
             // 
             this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEdit.Location = new System.Drawing.Point(9, 347);
-            this.btnEdit.Margin = new System.Windows.Forms.Padding(12);
+            this.btnEdit.Location = new System.Drawing.Point(13, 451);
+            this.btnEdit.Margin = new System.Windows.Forms.Padding(48, 44, 48, 44);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(101, 32);
+            this.btnEdit.Size = new System.Drawing.Size(92, 34);
             this.btnEdit.TabIndex = 5;
             this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = true;
@@ -111,22 +111,23 @@
             // 
             // cbActivityChoice
             // 
+            this.cbActivityChoice.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbActivityChoice.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbActivityChoice.FormattingEnabled = true;
-            this.cbActivityChoice.Location = new System.Drawing.Point(134, 306);
-            this.cbActivityChoice.Margin = new System.Windows.Forms.Padding(12);
+            this.cbActivityChoice.Location = new System.Drawing.Point(114, 367);
+            this.cbActivityChoice.Margin = new System.Windows.Forms.Padding(48, 44, 48, 44);
             this.cbActivityChoice.Name = "cbActivityChoice";
-            this.cbActivityChoice.Size = new System.Drawing.Size(116, 24);
+            this.cbActivityChoice.Size = new System.Drawing.Size(118, 24);
             this.cbActivityChoice.TabIndex = 6;
             // 
             // lblRegNumber
             // 
             this.lblRegNumber.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblRegNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRegNumber.Location = new System.Drawing.Point(77, 14);
-            this.lblRegNumber.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.lblRegNumber.Location = new System.Drawing.Point(67, 9);
+            this.lblRegNumber.Margin = new System.Windows.Forms.Padding(24, 0, 24, 0);
             this.lblRegNumber.Name = "lblRegNumber";
-            this.lblRegNumber.Size = new System.Drawing.Size(59, 18);
+            this.lblRegNumber.Size = new System.Drawing.Size(114, 31);
             this.lblRegNumber.TabIndex = 7;
             // 
             // groupBox1
@@ -134,9 +135,11 @@
             this.groupBox1.Controls.Add(this.rbtnDate);
             this.groupBox1.Controls.Add(this.rbtnName);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(412, 3);
+            this.groupBox1.Location = new System.Drawing.Point(433, 9);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(139, 48);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(12);
+            this.groupBox1.Size = new System.Drawing.Size(171, 65);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Sort by";
@@ -145,39 +148,43 @@
             // 
             this.rbtnDate.AutoSize = true;
             this.rbtnDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbtnDate.Location = new System.Drawing.Point(75, 22);
+            this.rbtnDate.Location = new System.Drawing.Point(100, 28);
+            this.rbtnDate.Margin = new System.Windows.Forms.Padding(12);
             this.rbtnDate.Name = "rbtnDate";
             this.rbtnDate.Size = new System.Drawing.Size(55, 20);
             this.rbtnDate.TabIndex = 1;
             this.rbtnDate.Text = "Date";
             this.rbtnDate.UseVisualStyleBackColor = true;
+            this.rbtnDate.CheckedChanged += new System.EventHandler(this.rbtnDate_CheckedChanged);
             // 
             // rbtnName
             // 
             this.rbtnName.AutoSize = true;
             this.rbtnName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbtnName.Location = new System.Drawing.Point(6, 21);
+            this.rbtnName.Location = new System.Drawing.Point(11, 28);
+            this.rbtnName.Margin = new System.Windows.Forms.Padding(12);
             this.rbtnName.Name = "rbtnName";
             this.rbtnName.Size = new System.Drawing.Size(63, 20);
             this.rbtnName.TabIndex = 0;
             this.rbtnName.Text = "Name";
             this.rbtnName.UseVisualStyleBackColor = true;
-            this.rbtnName.CheckedChanged += new System.EventHandler(this.rbtnName_CheckedChanged);
             // 
             // lblValue
             // 
             this.lblValue.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblValue.Location = new System.Drawing.Point(420, 305);
+            this.lblValue.Location = new System.Drawing.Point(391, 366);
+            this.lblValue.Margin = new System.Windows.Forms.Padding(12, 0, 12, 0);
             this.lblValue.Name = "lblValue";
-            this.lblValue.Size = new System.Drawing.Size(131, 25);
+            this.lblValue.Size = new System.Drawing.Size(217, 25);
             this.lblValue.TabIndex = 11;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(271, 306);
+            this.label2.Location = new System.Drawing.Point(241, 367);
+            this.label2.Margin = new System.Windows.Forms.Padding(12, 0, 12, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(143, 17);
             this.label2.TabIndex = 10;
@@ -188,9 +195,10 @@
             this.lstActivities.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstActivities.FormattingEnabled = true;
             this.lstActivities.ItemHeight = 16;
-            this.lstActivities.Location = new System.Drawing.Point(9, 89);
+            this.lstActivities.Location = new System.Drawing.Point(17, 114);
+            this.lstActivities.Margin = new System.Windows.Forms.Padding(12);
             this.lstActivities.Name = "lstActivities";
-            this.lstActivities.Size = new System.Drawing.Size(542, 196);
+            this.lstActivities.Size = new System.Drawing.Size(595, 244);
             this.lstActivities.TabIndex = 12;
             this.lstActivities.DoubleClick += new System.EventHandler(this.lstActivities_DoubleClick);
             // 
@@ -198,7 +206,8 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(10, 70);
+            this.label1.Location = new System.Drawing.Point(14, 86);
+            this.label1.Margin = new System.Windows.Forms.Padding(12, 0, 12, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(49, 16);
             this.label1.TabIndex = 13;
@@ -208,7 +217,8 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(205, 70);
+            this.label3.Location = new System.Drawing.Point(213, 86);
+            this.label3.Margin = new System.Windows.Forms.Padding(12, 0, 12, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(44, 16);
             this.label3.TabIndex = 14;
@@ -218,7 +228,8 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(338, 70);
+            this.label4.Location = new System.Drawing.Point(343, 86);
+            this.label4.Margin = new System.Windows.Forms.Padding(12, 0, 12, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(41, 16);
             this.label4.TabIndex = 15;
@@ -228,7 +239,8 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(457, 70);
+            this.label5.Location = new System.Drawing.Point(462, 86);
+            this.label5.Margin = new System.Windows.Forms.Padding(12, 0, 12, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(48, 16);
             this.label5.TabIndex = 16;
@@ -238,7 +250,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(565, 430);
+            this.ClientSize = new System.Drawing.Size(621, 494);
+            this.ControlBox = false;
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -256,7 +269,7 @@
             this.Controls.Add(this.lblLog);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(12);
+            this.Margin = new System.Windows.Forms.Padding(48, 44, 48, 44);
             this.Name = "FrmActivityLog";
             this.Text = "Activity Log";
             this.Load += new System.EventHandler(this.FrmActivityLog_Load);

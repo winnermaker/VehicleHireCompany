@@ -13,6 +13,7 @@ namespace VehicleHireCompany
         public FrmHire()
         {
             InitializeComponent();
+            //nudValue.Enabled = false;
         }
         protected override void UpdateDisplay()
         {
@@ -28,6 +29,27 @@ namespace VehicleHireCompany
             ClsHire lcActivity = (ClsHire)_Activity;
             lcActivity.EndDate = dtpEndDate.Value;
             lcActivity.CustName = txtCustomer.Text;            
+        }
+
+        protected override void btnOK_Click(object sender, EventArgs e)
+        {
+            ClsHire lcActivity = (ClsHire)_Activity;
+            PushData();
+            if (txtCustomer.Text != "" && txtName.Text != "")
+            {
+                if (lcActivity.EndDate.CompareTo(lcActivity.Date) >= 0) //<0:instance earlier than value. 0:instance same as value. 0<:instance later than value.
+                {
+                    base.btnOK_Click(sender, e);
+                }
+                else
+                {
+                    MessageBox.Show("Startdate must be before Enddate", "Invalide Dates");
+                }
+            }
+            else
+            {
+                MessageBox.Show("A Least one Field is empty. Please insert missing Data", "Field Empty");
+            }
         }
     }
 }
