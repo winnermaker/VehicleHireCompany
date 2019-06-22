@@ -27,15 +27,8 @@ namespace VehicleHireCompany {
 
         public override decimal CalculateValue(decimal prHireCharge)
         {
-            if (_EndDate.CompareTo(Date) >= 0) //<0:instance earlier than value. 0:instance same as value. 0<:instance later than value.
-            {
-                decimal days = Convert.ToDecimal((_EndDate - Date).TotalDays + 1);
-                return days * prHireCharge;
-            }
-            else
-            {
-                return 0;
-            }
+            decimal days = Convert.ToDecimal((_EndDate - Date).TotalDays + 1);
+            return days * prHireCharge;
         }
 
         public override string ToString()

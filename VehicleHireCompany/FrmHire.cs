@@ -33,8 +33,8 @@ namespace VehicleHireCompany
 
         protected override void btnOK_Click(object sender, EventArgs e)
         {
-            ClsHire lcActivity = (ClsHire)_Activity;
             PushData();
+            ClsHire lcActivity = (ClsHire)_Activity;
             if (txtCustomer.Text != "" && txtName.Text != "")
             {
                 if (lcActivity.EndDate.CompareTo(lcActivity.Date) >= 0) //<0:instance earlier than value. 0:instance same as value. 0<:instance later than value.

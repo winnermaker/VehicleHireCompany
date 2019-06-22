@@ -26,10 +26,10 @@ namespace VehicleHireCompany
         private void UpdateDisplay()
         {
             List<ClsActivity> lcActivityList = _Vehicle.ActivityList;
+            lblValue.Text = string.Format("{0:C} ", _Vehicle.TotalValue());
             lcActivityList.Sort(_Comparer[_SortOrder]);
             lstActivities.DataSource = null; //force refresh
-            lstActivities.DataSource = lcActivityList;            
-            lblValue.Text = string.Format("{0:C} ", _Vehicle.TotalValue());
+            lstActivities.DataSource = lcActivityList;  
             lblRegNumber.Text = _Vehicle.RegistrationNumber;
         }
 

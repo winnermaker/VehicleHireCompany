@@ -74,7 +74,7 @@ namespace VehicleHireCompany
         private void btnActivity_Click(object sender, EventArgs e)
         {
             lcHireCharge = _Vehicle.DailyHireCharge;
-            PushData();
+            _Vehicle.DailyHireCharge = nudHireCharge.Value;
             _ActivityLogForm.ShowDialog(_Vehicle);
         }
         
