@@ -10,7 +10,7 @@ namespace VehicleHireCompany {
         private string _Name;        
         private DateTime _Date = DateTime.Now;
         private decimal _Value;
-        private static String[] _ActivityType = {"Hire","Service","Relocate"};
+        private static string[] _ActivityType = {"Hire","Service","Relocate"};
 
         public string Name { get => _Name; set => _Name = value; }
         public DateTime Date { get => _Date; set => _Date = value; }

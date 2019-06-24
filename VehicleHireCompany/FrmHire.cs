@@ -13,7 +13,6 @@ namespace VehicleHireCompany
         public FrmHire()
         {
             InitializeComponent();
-            //nudValue.Enabled = false;
         }
         protected override void UpdateDisplay()
         {
